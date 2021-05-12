@@ -1,4 +1,4 @@
-let N = mobileCheck() ? 16 : 64;
+let N = mobileCheck() ? 48 : 64;
 let iter = mobileCheck() ? 4 : 8;
 let t = 0;
 
