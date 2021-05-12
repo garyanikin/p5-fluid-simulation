@@ -1,5 +1,5 @@
-let N = 64;
-let iter = 8;
+let N = mobileCheck() ? 16 : 64;
+let iter = mobileCheck() ? 4 : 8;
 let t = 0;
 
 // function to use 1D array and fake the extra two dimensions --> 3D
