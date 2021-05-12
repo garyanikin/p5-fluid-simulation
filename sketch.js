@@ -5,7 +5,7 @@ function setup() {
   const size = Math.min(windowWidth, windowHeight);
   SCALE = Math.ceil(size / N);
   createCanvas(size, size);
-  frameRate(30);
+  frameRate(24);
   fluid = new Fluid(0.2, 0, 0.0000001, SCALE);
 }
 
