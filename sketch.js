@@ -1,17 +1,21 @@
 let fluid;
 let SCALE;
+let fontSize;
+let IS_TEXT = location.search.indexOf("fc") !== -1;
 
 function setup() {
   const size = Math.min(windowWidth, windowHeight);
   SCALE = Math.ceil(size / N);
+  fontSize = size * 0.08;
   createCanvas(size, size);
-  frameRate(24);
+  frameRate(22);
   fluid = new Fluid(0.2, 0, 0.0000001, SCALE);
 }
 
 function windowResized() {
   const size = Math.min(windowWidth, windowHeight);
   SCALE = Math.ceil(size / N);
+  fontSize = size * 0.08;
   resizeCanvas(size, size);
   fluid = new Fluid(0.2, 0, 0.0000001, SCALE);
 }
@@ -38,5 +42,17 @@ function draw() {
   fluid.step();
   fluid.renderD();
   //fluid.renderV();
-  //fluid.fadeD();
+  //fluid.fadeD()
+
+  if (IS_TEXT) {
+    textSize(fontSize);
+    textAlign(CENTER, CENTER);
+    textStyle(BOLD);
+    fill(0);
+    text("FRONTEND COMMUNITY", 0.5 * width, (0.5 * height) / 2);
+    textSize(fontSize - 1);
+    textStyle(NORMAL);
+    fill(255);
+    text("FRONTEND COMMUNITY", 0.5 * width, (0.5 * height) / 2);
+  }
 }
